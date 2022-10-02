@@ -66,12 +66,14 @@ radioButtons.forEach(radio => {
         },
         last_name : {
             required: true,
-            String : true
         },
         company : {
             required: false
         },
         vin : {
+            required: true
+        },
+        license_plate : {
             required: true
         },
         email : {

@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # two decorators, same function
 @app.route('/', methods =["GET", "POST"])
-def gfg():
+def vinInfo():
     if request.method == "POST":
        # getting input with name = "name" in HTML form
        vin = request.form.get("vin")
@@ -17,25 +17,17 @@ def gfg():
 
        url = f'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/{vin}?format=json'
        r = requests.get(url)
-       parsed = json.loads(r.text);		
+       parsed = json.loads(r.text)		
        pretty_json = json.dumps(parsed, indent =4)
        return "Your vehicle info:  "+ pretty_json 
     return render_template("start.html")
 
-# def start():
-#     return render_template('start.html', the_title='Mechanic-Auto-Invoice')
+def start():
+    return render_template('start.html', the_title='Mechanic-Auto-Invoice')
     
-@app.route('/index.html')
-def index():
-    return render_template('index.html', the_title='Tiger Home Page')
-
-@app.route('/symbol.html')
-def symbol():
-    return render_template('symbol.html', the_title='Tiger As Symbol')
-
-@app.route('/myth.html')
-def myth():
-    return render_template('myth.html', the_title='Tiger in Myth and Legend')
+# @app.route('/index.html')
+# def index():
+#     return render_template('index.html', the_title='Tiger Home Page')
 
 if __name__ == '__main__':
     app.run(debug=True)

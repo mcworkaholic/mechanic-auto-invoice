@@ -4,7 +4,7 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form" action="{{url_for('gfg')}}">
+                    <form method="POST" class="register-form" id="register-form" action="{{url_for('vinInfo')}}">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-select">
@@ -13,11 +13,15 @@
                                     </div>
                                 </div>
                                 <div class="form-input">
-                                    <label for="chequeno" class="required">VIN:</label>
+                                    <label for="vin" class="required">VIN:</label>
                                     <input type="text" name="vin" id="vin"/>
                                 </div>
                                 <div class="form-input">
-                                    <label for="chequeno">Tire Pressure:</label>
+                                    <label for="license_plate" class="required">License Plate:</label>
+                                    <input type="text" name="license_plate" id="license_plate"/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="tire_pressure">Tire Pressure:</label>
                                     <input type="text" name="tire_pressure" id="tire_pressure" />
                                 </div>
                                 <div class="form-radio">
